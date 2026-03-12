@@ -143,35 +143,22 @@ export default function Navbar() {
                     >
                         {isDark ? <FiSun /> : <FiMoon />}
                     </motion.button>
-
-                    <button className="menu-btn mobile-only" onClick={() => setMenuOpen(!menuOpen)}>
-                        {menuOpen ? <FiX /> : <FiMenu />}
-                    </button>
                 </div>
             </div>
 
-            <AnimatePresence>
-                {menuOpen && (
-                    <motion.div
-                        className="mobile-menu"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+            {/* Mobile Bottom Navigation (App-like) */}
+            <div className="bottom-nav mobile-only">
+                {navLinks.map(link => (
+                    <Link
+                        key={link.to}
+                        to={link.to}
+                        className={`bottom-nav-link ${location.pathname === link.to ? 'active' : ''}`}
                     >
-                        {navLinks.map(link => (
-                            <Link
-                                key={link.to}
-                                to={link.to}
-                                className={`mobile-nav-link ${location.pathname === link.to ? 'active' : ''}`}
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                {link.icon} {link.label}
-                            </Link>
-                        ))}
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                        <span className="bottom-icon">{link.icon}</span>
+                        <span className="bottom-label">{link.label}</span>
+                    </Link>
+                ))}
+            </div>
         </nav>
     );
 }

@@ -61,6 +61,13 @@ button { cursor: pointer; border: none; font-family: inherit; }
 .page-container {
   min-height: 100vh;
   padding-top: var(--navbar-h);
+  padding-bottom: 60px; /* Space for bottom nav */
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding-bottom: 0;
+  }
 }
 
 .section-header {

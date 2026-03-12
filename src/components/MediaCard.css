@@ -29,6 +29,15 @@
     transform: scale(1.08);
 }
 
+@media (hover: none) {
+    .media-card:hover .card-poster {
+        transform: none;
+    }
+    .media-card:hover {
+        box-shadow: var(--shadow-card);
+    }
+}
+
 .card-overlay {
     position: absolute;
     inset: 0;
