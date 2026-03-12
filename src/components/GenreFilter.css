@@ -1,0 +1,33 @@
+.genre-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 4px;
+    margin-bottom: 24px;
+}
+
+.genre-chip {
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.genre-chip:hover {
+    background: var(--glass);
+    color: var(--text-primary);
+    border-color: var(--accent);
+}
+
+.genre-chip.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    box-shadow: 0 4px 15px var(--accent-glow);
+}

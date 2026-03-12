@@ -1,0 +1,132 @@
+.search-hero {
+    padding-bottom: 32px;
+}
+
+.search-page-form {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-page-input-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 14px 20px;
+    min-width: 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-page-input-wrap:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.spi-icon {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.search-page-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+    min-width: 0;
+}
+
+.search-page-input::placeholder {
+    color: var(--text-muted);
+}
+
+.spi-clear {
+    background: none;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.spi-clear:hover {
+    color: var(--accent);
+}
+
+.search-page-btn {
+    padding: 14px 32px;
+    border-radius: 50px;
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.search-page-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.search-page-suggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 130px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    z-index: 100;
+    overflow: hidden;
+}
+
+.sps-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sps-item:hover {
+    background: var(--glass);
+}
+
+.sps-item img {
+    width: 36px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.sps-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.sps-item strong {
+    font-size: 0.88rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sps-item span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}

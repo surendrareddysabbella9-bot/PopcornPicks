@@ -1,0 +1,49 @@
+.skeleton-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-card);
+}
+
+.skeleton-poster {
+    aspect-ratio: 2 / 3;
+    width: 100%;
+}
+
+.skeleton-info {
+    padding: 10px 12px;
+}
+
+.skeleton-title {
+    height: 14px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    width: 80%;
+}
+
+.skeleton-year {
+    height: 11px;
+    border-radius: 4px;
+    width: 40%;
+}
+
+.shimmer {
+    background: linear-gradient(90deg, var(--bg-elevated) 25%, rgba(255, 255, 255, 0.05) 50%, var(--bg-elevated) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
