@@ -84,19 +84,28 @@ button { cursor: pointer; border: none; font-family: inherit; }
 }
 
 .content-section {
-  padding: 32px 24px;
+  padding: 24px 16px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
+@media (min-width: 640px) {
+  .content-section {
+    padding: 32px 24px;
+  }
+}
+
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
 }
 
 @media (min-width: 640px) {
-  .media-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .media-grid { 
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+    gap: 20px;
+  }
 }
 
 @media (min-width: 1024px) {

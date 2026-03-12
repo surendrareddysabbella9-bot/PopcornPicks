@@ -130,3 +130,17 @@
     font-size: 0.75rem;
     color: var(--text-muted);
 }
+
+@media (max-width: 600px) {
+    .search-page-btn {
+        width: 100%;
+        padding: 14px;
+        justify-content: center;
+        display: flex;
+    }
+    
+    .search-page-suggestions {
+        right: 0;
+        top: calc(100% - 45px); /* Adjust based on stacking order if it wraps */
+    }
+}
