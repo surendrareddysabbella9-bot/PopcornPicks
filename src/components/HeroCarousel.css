@@ -18,24 +18,25 @@
     position: relative;
     display: flex;
     align-items: flex-end;
+    justify-content: flex-end; /* Added to push content right */
 }
 
 .hero-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right,
-            rgba(13, 13, 26, 0.95) 0%,
-            rgba(13, 13, 26, 0.7) 40%,
-            rgba(13, 13, 26, 0.1) 70%,
+    background: linear-gradient(to left,
+            rgba(11, 11, 20, 0.95) 0%,
+            rgba(11, 11, 20, 0.7) 40%,
+            rgba(11, 11, 20, 0.1) 70%,
             transparent 100%),
         linear-gradient(to top,
-            rgba(13, 13, 26, 1) 0%,
-            rgba(13, 13, 26, 0.3) 40%,
+            rgba(11, 11, 20, 1) 0%,
+            rgba(11, 11, 20, 0.3) 40%,
             transparent 70%);
 }
 
 [data-theme='light'] .hero-gradient {
-    background: linear-gradient(to right,
+    background: linear-gradient(to left,
             rgba(240, 242, 248, 0.95) 0%,
             rgba(240, 242, 248, 0.7) 40%,
             rgba(240, 242, 248, 0.1) 70%,
@@ -48,6 +49,10 @@
     z-index: 2;
     padding: 0 48px 80px;
     max-width: 650px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .hero-badges {
@@ -55,6 +60,7 @@
     gap: 8px;
     flex-wrap: wrap;
     margin-bottom: 16px;
+    justify-content: flex-end;
 }
 
 .hero-badge {
@@ -113,6 +119,7 @@
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .hero-btn {
@@ -155,18 +162,27 @@
 .hero-swiper .swiper-button-next,
 .hero-swiper .swiper-button-prev {
     color: white;
-    background: rgba(0, 0, 0, 0.5);
-    width: 44px;
-    height: 44px;
+    background: rgba(255, 255, 255, 0.08); /* Ultra soft transparency */
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.05); /* very subtle boundary */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Minimal shadow */
+    transition: all 0.3s ease;
+}
+
+.hero-swiper .swiper-button-next:hover,
+.hero-swiper .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
 }
 
 .hero-swiper .swiper-button-next::after,
 .hero-swiper .swiper-button-prev::after {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 14px; /* Reduced from 16px */
+    font-weight: 600; /* Made slightly less bold */
 }
 
 .hero-swiper .swiper-pagination-bullet {
